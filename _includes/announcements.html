@@ -1,0 +1,106 @@
+<!-- Page Content -->
+<div id="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="page-header d-flex justify-content-between align-items-center" id="announcements">
+          <h3 class="">Announcements</h3>
+        </div>
+
+        <ul class="ant-timeline" id="announcementlist">
+
+          {% comment %} Stickie list {% endcomment %}
+          {% for post in site.posts %}
+
+          {% if post.stickie != true %}
+          {% continue %}
+          {% endif %}
+
+          {% if post.hideinpostslist == true %}
+          {% continue %}
+          {% endif %}
+
+
+          <li class="ant-timeline-item">
+            <!-- index start from 1 -->
+            <div class="ant-timeline-item-head ant-timeline-item-head-blue">
+            </div>
+            <div class="ant-timeline-item-content">
+              <span class="badge badge-danger d-lg-inline-block d-none">{{ post.date | date: "%Y-%m-%d" }} </span>
+              <span class="align-items-center post-title">
+                <a class="post-link text-danger h6 text-danger font-weight-bold"
+                  href="{{site.url}}{{site.baseurl}}{{ post.url}}">{{ post.title }}</a>
+              </span>
+            </div>
+          </li>
+          {% endfor %}
+
+
+          {% comment %} Normal post list {% endcomment %}
+          {% for post in site.posts %}
+
+          {% comment %} If we dont wanna it show in post list{% endcomment %}
+          {% if post.hideinpostslist == true %}
+          {% continue %}
+          {% endif %}
+
+          {% comment %} If it already showed in stickie list {% endcomment %}
+          {% if post.stickie == true %}
+          {% continue %}
+          {% endif %}
+
+          <li class="ant-timeline-item">
+            <!-- index start from 1 -->
+            <div class="ant-timeline-item-head ant-timeline-item-head-blue">
+            </div>
+            <div class="ant-timeline-item-content">
+              <span class="align-items-center post-title">
+                <a class="post-link h6 font-weight-bold" href="{{site.url}}{{site.baseurl}}{{ post.url}}">{{ post.title }}</a>
+              </span>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+            <!-- <div class="pagination"></div> -->
+
+        <div class="page-header d-flex justify-content-between align-items-center" id="schedule">
+          <h3 class="">Schedule</h3>
+        </div>
+
+        <div>
+        <table class="table table-sm">
+          <tr>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Location</td>
+          </tr>
+          <tr>
+            <td>3/30</td>
+            <td>5:00pm</td>
+            <td><a href="https://hangouts.google.com/call/jyVb13QkWmbfXn0SbuRKAEEE">Google Hangouts</a></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+
+        <div class="page-header d-flex justify-content-between align-items-center" id="instructions">
+          <h3 class="">Instructions</h3>
+        </div>
+	<p> If you want to make a suggestion for a reading, please visit the
+	following <a href="https://docs.google.com/spreadsheets/d/1IZnrwMUzAgTfQcvkw7d9DFOpfbMmF6d5S1yS0dsdPsw/edit?usp=sharing">google
+	sheet</a> and add an entry to the list. Please only add one suggestion
+	to the list.</p>
+        <div>
+        </div>
+
+        <div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<!-- /#page-content-wrapper -->

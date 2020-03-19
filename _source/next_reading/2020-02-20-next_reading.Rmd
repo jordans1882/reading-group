@@ -1,0 +1,46 @@
+---
+layout: post
+title: "Next Reading"
+author: "Jordan Schupbach"
+date: "February 2 , 2020"
+---
+
+{% include lib/mathjax.html %}
+
+
+```{r setup, echo = FALSE, message = FALSE}
+library(knitr)
+library(xtable)
+library(pander)
+```
+
+## Selected Reading:
+The following paper was selected via random sampling as the next paper to read:
+
+```{r import-potential-readings, echo = FALSE, warning = FALSE, results = 'asis'}
+url <- "https://docs.google.com/spreadsheets/d/1IZnrwMUzAgTfQcvkw7d9DFOpfbMmF6d5S1yS0dsdPsw/edit?usp=sharing"
+txt <- readLines(url)
+bounds <- numeric()
+for(i in 1:length(txt)) {
+    if(length(grep('###', txt[i]))==1) {
+        bounds <- c(bounds, i)
+    }
+}
+txt <- txt[(bounds[1] + 1):(bounds[2] - 1)]
+df <- data.frame(cbind(0, 0, 0))
+names(df) <- strsplit(txt[1], ",")[[1]]
+for(i in 2:(length(txt))) {
+    df[i,] <- strsplit(txt[i], ",")[[1]]
+}
+df <- df[2:length(df),]
+chosen_reading_index <- sample(1:nrow(df), 1)
+print(xtable(df[chosen_reading_index,]), type = "html", html.table.attributes = "", comment = FALSE, include.rownames = FALSE)
+```
+
+## Potential Papers:
+
+The previous selected paper was selected from the following list:
+
+```{r sample-readings, echo = FALSE, warning = FALSE, results = 'asis'}
+print(xtable(df), type = "html", html.table.attributes = "", comment = FALSE, include.rownames = FALSE)
+```
