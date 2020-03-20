@@ -142,7 +142,7 @@ border-radius:7px;
         </nav>
         <div class="tab-content" id=tab-content>
             <div class="tab-pane text-sm-center active animated fadeIn" id="sidebar-home-content">
-                <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/jordans1882/reading-group/master/img/gaussian_dist.jpg">
+                <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/jordans1882/reading-group/master/img/normal_dist.png">
                 <div class="text-warning">Reading Group</div>
                 <div class="text-white">All models are wrong, but some are useful. -George Box</div>
                 <ul class="sidebar-nav">
