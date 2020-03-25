@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Post - Episode I: The Phantom Menace</title>
+    <title>Post - 04/06: Selected Reading</title>
 
     <!-- Put encrypt ahead of all other includes -->
     
@@ -233,294 +233,29 @@ border-radius:7px;
                 </div>
                 <div class="page-header">
                     <h1 class="text-primary">
-                        Episode I: The Phantom Menace
+                        04/06: Selected Reading
                     </h1>
                 </div>
                 <div id="page-content">
-                    <p>```{r setup, echo = FALSE, message = FALSE}
-library(knitr)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-```{r todos, echo = FALSE}
-## TODO: Redefine plot hook so we can have plots inside of html blockquotes
-## This get's close, but we need to save file in correct place and
-## reference it properly
+                    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-# knitr::knit_hooks$set(
-#   plot = function(x, options) {
-#     cap  &lt;- options$fig.cap  # figure caption
-#     tags &lt;- htmltools::tags
-#     as.character(tags$figure(
-#       tags$img(src = x, alt = cap),
-#       tags$figcaption(cap)
-#     ))
-#   }
-# )
+<h2 id="selected-reading">Selected Reading:</h2>
+<p>The following paper was selected via random sampling as the next paper to read:</p>
 
-## A More complicated exampe from knitr's definition:
-# knitr::knit_hooks$set(
-#   plot = function(x, options) {
-#     # pull out all the relevant plot options
-#     fig.num = options$fig.num = 1 #options$fig.num knitr::%n% 1L
-#     fig.cur = options$fig.cur = 1 # knitr::%n% 1L
-#   
-#     if (options$fig.show == 'animate') {
-#       # Don't print out intermediate plots if we're animating
-#       return(if (fig.cur &lt; fig.num) '' else hook_animation(options)(x, options))
-#     }
-#     ai = options$fig.show == 'asis'
-#     plot1 = ai || fig.cur &lt;= 1L; plot2 = ai || fig.cur == fig.num
-#     d1 = if (plot1) paste0(if (TRUE) '&lt;/div&gt;',
-#                           sprintf('&lt;div class="rimage %s"&gt;', options$fig.align))
-#     d2 = if (plot2) paste0('&lt;/div&gt;', if (TRUE) '&lt;div class="rcode"&gt;')
-#     paste0(
-#       "d1, .img.tag(
-#         .upload.url(x), options$out.width, options$out.height, .img.cap(options)",
-#         paste(c(options$out.extra, 'class="plot"'), collapse = ' '),
-#       ")", d2, '\n'
-#     )
-#   }
-# )
-#
-# One workaround if we can't figure this out is to save images in assets manually and
-# include images manually this would be a bit unsatisfying though...
-#
-### Some General TODOs
-## TODO: Need to get Solution to be automatically folded when page loads
-## TODO: Add callout, checklist, discussion, prereq and testimonial example blocks
-## TODO: fix before text in blocks to be FontAwesome text
-## TODO: add example bibliography entry
-## TODO: Add some inline references to figures etc.
-## TODO: Find somewhere to include author (instructor)
-## TODO: Images have a rough style... need softer edges and background color?
-</code></pre></div></div>
+<table>
+<tr> <th> Title </th> <th> Authors </th> <th> Suggestor </th>  </tr>
+  <tr> <td> Bayesian Nonparametric Longitudinal Analysis </td> <td> Fernando Quintana; Wesley Johnson; Elaine Waetjen; Ellen Gold </td> <td> Jordan Love </td> </tr>
+   </table>
 
-<p>```{r pkgs, echo = FALSE, message = FALSE}</p>
-<h1 id="initialize-environment">Initialize Environment</h1>
-<p>#########################</p>
+<h2 id="potential-papers">Potential Papers:</h2>
 
-<h1 id="set-cran-location-for-installing-packages">Set CRAN location for installing packages</h1>
-<p>############################################
-r &lt;- getOption(“repos”)
-r[“CRAN”] &lt;- “http://cran.wustl.edu”
-options(repos = r)
-rm(r)</p>
+<p>The previous selected paper was selected from the following list:</p>
 
-<h2 id="helper-function-to-install-a-cran-package-if-not-installed-and-load">Helper function to install a CRAN package if not installed and load</h2>
-<p>######################################################################
-use_package &lt;- function(p) {
-if (!is.element(p, installed.packages()[,1]))
-  install.packages(p, dep = TRUE)
-library(p, character.only = TRUE)
-}</p>
-
-<h1 id="load-base-r-libraries-no-need-to-install">Load base R libraries (no need to install)</h1>
-<p>#############################################
-library(grid)</p>
-
-<h1 id="check-and-install-cran-packages-may-need-more">Check and install CRAN packages (may need more)!!!!!!</h1>
-<p>#######################################################
-use_package(‘png’) # For importing pngs
-use_package(‘grImport2’) # For importing svg graphics
-use_package(‘TDA’)
-use_package(‘ggplot2’) # For some nice plots based in the grid package</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-&lt;blockquote class="objectives"&gt;
-&lt;h2&gt; Overview &lt;/h2&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-3"&gt;
-      &lt;strong&gt;Teaching:&lt;/strong&gt; 30 min
-      &lt;br/&gt;
-      &lt;strong&gt;Exercises:&lt;/strong&gt; 10 min
-    &lt;/div&gt;
-    &lt;div class="col-md-9"&gt;
-      &lt;strong&gt;Questions&lt;/strong&gt;
-      &lt;ul&gt;
-	&lt;li&gt;&lt;p&gt;What defines meaning? &lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Does P = NP? &lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Are we alone in the universe?&lt;/p&gt;
-&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-   &lt;div class="row"&gt;
-    &lt;div class="col-md-3"&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-9"&gt;
-      &lt;strong&gt;Objectives&lt;/strong&gt;
-      &lt;ul&gt;
-	
-	&lt;li&gt;&lt;p&gt;Parallel park a train&lt;/p&gt;
-&lt;/li&gt;
-	
-	&lt;li&gt;&lt;p&gt;End world hunger&lt;/p&gt;
-&lt;/li&gt;
-	
-	&lt;li&gt;&lt;p&gt;Develop your very own R package 'TDA'&lt;/p&gt;
-&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;!--- the syntax '---' creates a line seperator, a nice way to split up concepts --&gt;
-
----
-
-## Content
-Blibbity blah blah, here is my sweet content, add yours here.
-
-
-### Subsections
-Blibbity blah blah, this is a subsection, make as many or as few as you'd like using increasing numbers of # symbols.
-
-### Subsection with code chunk
-Here's how to add a code chunk:
-
-```{r plot_two_Circles, message=FALSE, echo=TRUE}
-library('TDA')
-library('spatstat')
-
-x &lt;- circleUnif(50,10)
-plot(x, pch = 18, xlab = "", ylab = "")
-</code></pre></div></div>
-
-<p>Or if we just want plots and not the code that generated them:</p>
-
-<p>```{r plot_two_Circles_Again, message=FALSE, echo=FALSE}
-library(‘TDA’)
-library(‘spatstat’)
-x &lt;- circleUnif(100,1.5)
-Nice_Cycle &lt;- as.ppp.data.frame(x,c(-2,2,-2,2))
-plot(Nice_Cycle, pch = 18, xlab = “”, ylab = “”)</p>
-
-<p>xppp &lt;- as.ppp.data.frame(Nice_Cycle,c(-2,2,-2,2))
-Angsty_Cycle &lt;-rjitter(xppp,0.25)
-plot(Angsty_Cycle, pch = 16, xlab = “”, ylab = “”)</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
----
-
-### Adding References
-
-For some entirely credible theories about whether we are alone in the universe,
-take a look at the important work *Disinformation guide to ancient aliens, lost
-civilizations, astonishing archaeology &amp; hidden history* {% cite peet:2013 %}.
-
-### Various Blocks
-
-There are various blockquote classes for given purposes. These include:
-
- - callout
- - objectives
- - keypoints
- - challenge
- - solution
- - prereq
- - testimonial
-
-Here are the examples not included elsewhere in this documen
-
-&lt;dev&gt;
-&lt;blockquote class="callout"&gt;
-&lt;h2&gt; A Callout block &lt;/h2&gt;
-      &lt;ul&gt;
-	&lt;li&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;&lt;/p&gt; &lt;/li&gt;
-      &lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/dev&gt;
-
-&lt;dev&gt;
-&lt;blockquote class="prereq"&gt;
-&lt;h2&gt; A Prereq block &lt;/h2&gt;
-      &lt;ul&gt;
-	&lt;li&gt;&lt;p&gt;Before you attempt to parallel park a train, you should take a look at
-	&lt;a href="https://answers.yahoo.com/question/index?qid=20130819233007AAQhlSA&amp;guccounter=1&amp;guce_referrer=aHR0cHM6Ly9kdWNrZHVja2dvLmNvbS8&amp;guce_referrer_sig=AQAAACdALqOVkl0mLZiW1g8IpTgYvl8G_uts7jSairhAXRofywjM0vkKt_a7-XmXTcYmCACskbMHjfw9QG6BNraV83oqT7nPPODo2fvflxXBGivWO5yPq0I69ySc2PN5dOv_Rth1uuTdLj59oPlFNDbhkKebio8oCIl9yS-dP7JCuy-x"&gt; this yahoo post &lt;/a&gt;
-	&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Before solving the P equals NP problem, you might want to consider the consequences.&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Have you considered that aliens may already live among us?&lt;/p&gt; &lt;/li&gt;
-      &lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/dev&gt;
-
-&lt;dev&gt;
-&lt;blockquote class="testimonial"&gt;
-&lt;h2&gt; A Testimonial block &lt;/h2&gt;
-      &lt;ul&gt;
-	&lt;li&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;&lt;/p&gt; &lt;/li&gt;
-      &lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/dev&gt;
-
-blabbidy blah
-
-## Another Section With a Challenge
-
-Yada yada yada, clustering, manifolds
-
-&lt;blockquote class="challenge"&gt;
-  &lt;h3 id="exploring-more-ls-flags"&gt;Challenge&lt;/h3&gt;
-      &lt;ul&gt;
-	&lt;li&gt;&lt;p&gt;Create your own cycle with 10 points and radius = 10.&lt;/p&gt;
-&lt;/li&gt;
-	&lt;li&gt;&lt;p&gt;Make sure that the axes are not labeled with a range of numbers.&lt;/p&gt;
-&lt;/li&gt;
-      &lt;/ul&gt;
-
-  &lt;blockquote class="solution"&gt;
-    &lt;h3 id="solution"&gt;Solution&lt;/h3&gt;
-	
-```{r plot_one_Circle, message=FALSE, echo=TRUE, fig.keep='none'}
-x &lt;- circleUnif(10, 10)
-Nice_Cycle &lt;- as.ppp.data.frame(x,c(-10,10,-10,10))
-plot(Nice_Cycle, pch = 18, xlab = "", ylab = "")
-</code></pre></div></div>
-
-<p><code class="highlighter-rouge">{r plot_one_Circle-save, message=FALSE, echo=FALSE, fig.keep='none', results='hide', warning=FALSE}
-dir.create("../../assets/first-draft")
-png("../../assets/first-draft/plot_one_Circle.png")
-x &lt;- circleUnif(10, 10)
-Nice_Cycle &lt;- as.ppp.data.frame(x,c(-10,10,-10,10))
-plot(Nice_Cycle, pch = 18, xlab = "", ylab = "")
-dev.off()
-</code></p>
-
-<dev>
-	<img width="40%" src="../../assets/first-draft/plot_one_Circle.png" />
-</dev>
-
-<p>&lt;/blockquote&gt;
-&lt;/blockquote&gt;</p>
-
-<hr />
-
-<dev>
-<blockquote class="keypoints">
-<h2> Key Points </h2>
-      <ul>
-	<li><p>The world is what you make it</p>
-</li>
-	<li><p>P equals NP, but there wasn't enough room to fit the proof in the margins</p>
-</li>
-	<li><p>Are we're alone in the universe? I think not. As Fox
-           Moulder's office poster says: ''I want to believe''</p> </li>
-      </ul>
-</blockquote>
-</dev>
-
-<h2 id="references">References</h2>
-
-<p>{% bibliography –cited %}</p>
+<table>
+<tr> <th> Title </th> <th> Authors </th> <th> Suggestor </th>  </tr>
+  <tr> <td> Bayesian Nonparametric Longitudinal Analysis </td> <td> Fernando Quintana; Wesley Johnson; Elaine Waetjen; Ellen Gold </td> <td> Jordan Love </td> </tr>
+  <tr> <td>  </td> <td>  </td> <td>  </td> </tr>
+   </table>
 
                 </div>
 
