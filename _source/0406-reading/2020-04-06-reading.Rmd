@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "04/06 Selected Reading"
+title: "04/06 - Selected Reading"
 author: "Jordan Schupbach"
-date: "April 6 , 2020"
+date: "April 6, 2020"
 ---
 
 {% include lib/mathjax.html %}
