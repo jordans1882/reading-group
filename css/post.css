@@ -4,9 +4,9 @@
 } */
 div#post-content .table td,
 div#post-content .table th {
-  border: 2px solid black; }
+  border: 1px solid grey; }
 div#post-content .table thead th {
-  border: 2px solid black; }
+  border: 1px solid grey; }
 
 div#reading-progress {
   height: 3px; }
@@ -536,5 +536,4 @@ table {
 
 th, td {
   font-weight: unset;
-  padding-right: 10px;
-  border: 2px solid black; }
+  padding-right: 10px; }
