@@ -8,10 +8,10 @@ div#post-content {
   .table {
     td,
     th {
-      border: 1px solid grey;
+      border: 2px solid black;
     }
     thead th {
-      border: 1px solid grey;
+      border: 2px solid black;
     }
   }
 }
@@ -168,7 +168,9 @@ table {
   width: 100%;
 }
 
+
 th, td {
   font-weight: unset;
   padding-right: 10px;
+  border: 2px solid black;
 }
