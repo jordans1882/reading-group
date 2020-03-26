@@ -33,6 +33,7 @@ for(i in 2:(length(txt))) {
     df[i,] <- strsplit(txt[i], ",")[[1]]
 }
 df <- df[2:length(df),]
+df <- df[complete.cases(df),]
 chosen_reading_index <- sample(1:nrow(df), 1)
 print(xtable(df[chosen_reading_index,]), type = "html", html.table.attributes = "", comment = FALSE, include.rownames = FALSE)
 ```
