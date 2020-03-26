@@ -545,9 +545,9 @@ dev.off()
         <footer class="mt-5 pt-5">
   <div class="container w-100">
 
-   <a href="https://github.com/jordans1882/reading-group">
+   <h3><center><a href="https://github.com/jordans1882/reading-group">
        <i class="fa fa-github" aria-hidden="true"></i>
-   </a>
+   </a></center></h3>
 
   </div>
 </footer>
